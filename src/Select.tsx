@@ -17,7 +17,7 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
   function selectOption(option: SelectOption) {
     if (multiple) {
       if (value.includes(option)) {
-        onChange(value.filter((o) => o !== option));
+        onChange(value.filter((opt) => opt !== option));
       } else {
         onChange([...value, option]);
       }
