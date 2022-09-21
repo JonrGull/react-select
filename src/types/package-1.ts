@@ -3,16 +3,16 @@ export type SelectOption = {
   value: string | number;
 };
 
-export type MultipleSelectProps = {
-  multiple: true;
-  value: SelectOption[];
-  onChange: (value: SelectOption[]) => void;
-};
-
 export type SingleSelectProps = {
   multiple?: false;
   value?: SelectOption;
   onChange: (value: SelectOption | undefined) => void;
+};
+
+export type MultipleSelectProps = {
+  multiple: true;
+  value: SelectOption[];
+  onChange: (value: SelectOption[]) => void;
 };
 
 export type SelectProps = {

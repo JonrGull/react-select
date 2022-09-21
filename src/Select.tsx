@@ -10,9 +10,8 @@ export function Select({ multiple, value, onChange, options }: SelectProps) {
 
   const clearOptions = () => (multiple ? onChange([]) : onChange(undefined));
 
-  const isOptionSelected = (option: SelectOption) => {
-    return multiple ? value.includes(option) : value === option;
-  };
+  const isOptionSelected = (option: SelectOption) =>
+    multiple ? value.includes(option) : value === option;
 
   function selectOption(option: SelectOption) {
     if (multiple) {
