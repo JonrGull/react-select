@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      <h1>Select Multiple</h1>
       <Select
         multiple
         options={options}
@@ -24,6 +25,7 @@ function App() {
         onChange={(opt) => setValue1(opt)}
       />
       <br />
+      <h1>Select Single</h1>
       <Select
         options={options}
         value={value2}
