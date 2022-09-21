@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import styles from "./select.module.css";
+import styles from "./sass/select.module.css";
 import { SelectOption, SelectProps } from "./types";
 
 export function Select({ multiple, value, onChange, options }: SelectProps) {
