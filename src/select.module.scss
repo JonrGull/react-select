@@ -12,7 +12,7 @@
 }
 
 .container:focus {
-  border-color: hsl(200deg, 100%, 50%);
+  border-color: hsl(200, 100%, 50%);
 }
 
 .value {
@@ -63,41 +63,48 @@
   top: calc(100% + 0.25em);
   background-color: white;
   z-index: 100;
-}
-.options.show {
-  display: block;
+
+  &.show {
+    display: block;
+  }
 }
 
 .option {
   padding: 0.25em 0.5em;
   cursor: pointer;
+
+  &.selected {
+    background-color: hsl(200, 100%, 70%);
+  }
+
+  &.highlighted {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+  }
+
+  &-badge {
+    display: flex;
+    align-items: center;
+    border: 0.05em solid #777;
+    border-radius: 0.25em;
+    padding: 0.15em 0.25em;
+    gap: 0.25em;
+    cursor: pointer;
+    background: none;
+    outline: none;
+
+    &:hover,
+    &:focus {
+      background-color: hsl(0, 100%, 90%);
+      border-color: hsl(0, 100%, 50%);
+      .remove-btn {
+        color: hsl(0, 100%, 50%);
+      }
+    }
+
+    .remove-btn {
+      font-size: 1em;
+      color: #777;
+    }
+  }
 }
-.option.selected {
-  background-color: hsl(200deg, 100%, 70%);
-}
-.option.highlighted {
-  background-color: hsl(200deg, 100%, 50%);
-  color: white;
-}
-.option-badge {
-  display: flex;
-  align-items: center;
-  border: 0.05em solid #777;
-  border-radius: 0.25em;
-  padding: 0.15em 0.25em;
-  gap: 0.25em;
-  cursor: pointer;
-  background: none;
-  outline: none;
-}
-.option-badge:hover, .option-badge:focus {
-  background-color: hsl(0deg, 100%, 90%);
-  border-color: hsl(0deg, 100%, 50%);
-}
-.option-badge:hover .remove-btn, .option-badge:focus .remove-btn {
-  color: hsl(0deg, 100%, 50%);
-}
-.option-badge .remove-btn {
-  font-size: 1em;
-  color: #777;
-}/*# sourceMappingURL=select.module.css.map */
