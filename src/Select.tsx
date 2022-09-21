@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import styles from "./select.module.css";
 
 type SelectOptions = {
@@ -12,13 +14,20 @@ type SelectProps = {
 };
 
 export function Select({ value, onChange, options }: SelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div tabIndex={0} className={styles.container}>
+    <div
+      onBlur={() => setIsOpen(false)}
+      onClick={() => setIsOpen((prev) => !prev)}
+      tabIndex={0}
+      className={styles.container}
+    >
       <span className={styles.value}>{value?.label}</span>
       <button className={styles["clear-btn"]}>&times;</button>
       <div className={styles.divider} />
       <div className={styles.caret} />
-      <ul className={`${styles.options} ${styles.show}`}>
+      <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
         {options.map((opt) => (
           <li key={opt.label} className={styles.option}>
             {opt.label}
