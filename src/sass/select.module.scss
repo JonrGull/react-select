@@ -5,8 +5,9 @@ $secondary-blue: hsl(200, 100%, 50%);
 $primary-red: hsl(0, 100%, 90%);
 $secondary-red: hsl(0, 100%, 50%);
 
-html {
+* {
   box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
 }
 
 body {
